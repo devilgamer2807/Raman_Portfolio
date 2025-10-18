@@ -42,7 +42,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <button 
             onClick={() => scrollToSection('home')}
-            className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:scale-105 transition-smooth"
+            className={`text-2xl font-bold hover:scale-105 transition-smooth ${
+              isScrolled 
+                ? 'bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent' 
+                : 'text-white'
+            }`}
           >
             Raman Sangwan
           </button>
@@ -53,7 +57,11 @@ const Navigation = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-foreground hover:text-primary transition-smooth font-medium"
+                className={`transition-smooth font-medium ${
+                  isScrolled 
+                    ? 'text-foreground hover:text-primary' 
+                    : 'text-white/90 hover:text-white'
+                }`}
               >
                 {link.label}
               </button>

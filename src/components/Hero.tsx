@@ -3,7 +3,7 @@ import { Mail, Phone, Linkedin, Github, Code } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center gradient-hero text-white relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center gradient-hero text-white relative overflow-hidden pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-float"></div>
@@ -12,7 +12,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-6xl md:text-8xl font-bold mb-8">
             Raman Sangwan
           </h1>
           <p className="text-2xl md:text-3xl mb-4 font-semibold">
@@ -50,8 +50,10 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="hero" size="lg" onClick={() => window.open('/resume.pdf', '_blank')}>
-              Download Resume
+            <Button variant="hero" size="lg" asChild>
+              <a href="/resume.pdf" download="Raman_Sangwan_Resume.pdf">
+                Download Resume
+              </a>
             </Button>
             <Button 
               variant="outline" 

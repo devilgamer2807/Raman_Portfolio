@@ -8,46 +8,55 @@ const Certifications = () => {
       type: 'tech',
       title: "Oracle Certified – SQL Foundations",
       issuer: "Oracle",
+      link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=YOUR_ORACLE_CERT_ID"
     },
     {
       type: 'tech',
       title: "SQL (Basic & Intermediate)",
       issuer: "Certified",
+      link: "https://www.hackerrank.com/certificates/YOUR_CERT_ID"
     },
     {
       type: 'tech',
       title: "NPTEL Certification",
       issuer: "NPTEL",
+      link: "https://nptel.ac.in/noc/YOUR_CERT_ID"
     },
     {
       type: 'tech',
       title: "Python Course",
       issuer: "Udemy",
+      link: "https://www.udemy.com/certificate/YOUR_CERT_ID"
     },
     {
       type: 'marketing',
       title: "Fundamentals of Digital Marketing",
       issuer: "Google Digital Garage",
+      link: "https://learndigital.withgoogle.com/digitalgarage/validate-certificate-code"
     },
     {
       type: 'marketing',
       title: "Google Analytics Certification",
       issuer: "Google",
+      link: "https://skillshop.credential.net/"
     },
     {
       type: 'marketing',
       title: "Social Media Marketing",
       issuer: "HubSpot",
+      link: "https://academy.hubspot.com/certificates/YOUR_CERT_ID"
     },
     {
       type: 'marketing',
       title: "Digital Marketing Associate",
       issuer: "Meta",
+      link: "https://www.facebookblueprint.com/student/catalog"
     },
     {
       type: 'marketing',
       title: "SEO Crash Course",
       issuer: "Udemy",
+      link: "https://www.udemy.com/certificate/YOUR_CERT_ID"
     },
   ];
 
@@ -77,21 +86,28 @@ const Certifications = () => {
             </div>
             <div className="space-y-4">
               {techCerts.map((cert, index) => (
-                <Card 
-                  key={index} 
-                  className="p-6 hover:shadow-lg transition-smooth hover:scale-[1.02] border-l-4 border-l-primary"
-                  style={{ animationDelay: `${index * 0.05}s` }}
+                <a 
+                  key={index}
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
                 >
-                  <div className="flex items-start gap-3">
-                    <Award className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-semibold mb-1">{cert.title}</h4>
-                      <Badge variant="secondary" className="bg-primary/10 text-primary">
-                        {cert.issuer}
-                      </Badge>
+                  <Card 
+                    className="p-6 hover:shadow-lg transition-smooth hover:scale-[1.02] border-l-4 border-l-primary cursor-pointer"
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    <div className="flex items-start gap-3">
+                      <Award className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-semibold mb-1">{cert.title}</h4>
+                        <Badge variant="secondary" className="bg-primary/10 text-primary">
+                          {cert.issuer}
+                        </Badge>
+                      </div>
                     </div>
-                  </div>
-                </Card>
+                  </Card>
+                </a>
               ))}
             </div>
           </div>
@@ -106,21 +122,28 @@ const Certifications = () => {
             </div>
             <div className="space-y-4">
               {marketingCerts.map((cert, index) => (
-                <Card 
-                  key={index} 
-                  className="p-6 hover:shadow-lg transition-smooth hover:scale-[1.02] border-l-4 border-l-secondary"
-                  style={{ animationDelay: `${index * 0.05}s` }}
+                <a 
+                  key={index}
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
                 >
-                  <div className="flex items-start gap-3">
-                    <Award className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-semibold mb-1">{cert.title}</h4>
-                      <Badge variant="secondary" className="bg-secondary/10 text-secondary">
-                        {cert.issuer}
-                      </Badge>
+                  <Card 
+                    className="p-6 hover:shadow-lg transition-smooth hover:scale-[1.02] border-l-4 border-l-secondary cursor-pointer"
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    <div className="flex items-start gap-3">
+                      <Award className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-semibold mb-1">{cert.title}</h4>
+                        <Badge variant="secondary" className="bg-secondary/10 text-secondary">
+                          {cert.issuer}
+                        </Badge>
+                      </div>
                     </div>
-                  </div>
-                </Card>
+                  </Card>
+                </a>
               ))}
             </div>
           </div>
