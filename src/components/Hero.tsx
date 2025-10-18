@@ -1,5 +1,16 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Linkedin, Github, Code } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Code, Download } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 const Hero = () => {
   return (
@@ -50,11 +61,43 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="hero" size="lg" asChild>
-              <a href="/resume.pdf" download="Raman_Sangwan_Resume.pdf">
-                Download Resume
-              </a>
-            </Button>
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button variant="hero" size="lg">
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Resume
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Choose Resume Type</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Select which version of the resume you'd like to download.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter className="flex-col sm:flex-row gap-2">
+                  <AlertDialogAction asChild>
+                    <a 
+                      href="/Raman_Tech_Resume.pdf" 
+                      download="Raman_Sangwan_Tech_Resume.pdf"
+                      className="bg-primary text-primary-foreground hover:bg-primary-dark"
+                    >
+                      Tech Resume
+                    </a>
+                  </AlertDialogAction>
+                  <AlertDialogAction asChild>
+                    <a 
+                      href="/Raman_Nontech_Resume.pdf" 
+                      download="Raman_Sangwan_Nontech_Resume.pdf"
+                      className="bg-secondary text-secondary-foreground hover:bg-secondary-dark"
+                    >
+                      Non-Tech Resume
+                    </a>
+                  </AlertDialogAction>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
             <Button 
               variant="outline" 
               size="lg" 
